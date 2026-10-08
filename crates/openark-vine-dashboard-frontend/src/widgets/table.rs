@@ -18,6 +18,7 @@ use url::Url;
 use web_sys::HtmlInputElement;
 use yew::prelude::*;
 
+use super::Dialog;
 use crate::{
     router::Route,
     stores::{
@@ -27,8 +28,6 @@ use crate::{
     unwrap_response,
     widgets::{DialogAction, dialog::DialogState},
 };
-
-use super::Dialog;
 
 trait ValueExt {
     fn to_display_string(&self) -> String;

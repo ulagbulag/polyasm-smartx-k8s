@@ -9,13 +9,12 @@ use yew::{
 };
 use yew_router::{hooks::use_navigator, prelude::Navigator};
 
+use super::io::UseIOReducerHandleExt;
 use crate::{
     i18n::DynI18n,
     router::Route,
     widgets::{Empty, FileNotFound},
 };
-
-use super::io::UseIOReducerHandleExt;
 
 const DATA_TRANSFER_KIND_CONTAINER: &str = "string";
 const DATA_TRANSFER_TYPE_CONTAINER: &str = concat!(env!("CARGO_CRATE_NAME"), "/file-entry");

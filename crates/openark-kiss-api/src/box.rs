@@ -281,25 +281,17 @@ impl BoxGroupSpec {
 #[cfg_attr(feature = "schemars", derive(JsonSchema))]
 #[cfg_attr(feature = "serde", derive(Serialize, Deserialize))]
 pub enum BoxGroupRole {
-    /*
-        Control Plane
-    */
+    // Control Plane
     ControlPlane,
-    /*
-        Specialized Worker
-    */
+    // Specialized Worker
     Compute,
     Dashboard,
     Desktop,
     Gateway,
     Storage,
-    /*
-        Domain-specific Worker
-    */
+    // Domain-specific Worker
     Robot,
-    /*
-        General Worker
-    */
+    // General Worker
     #[default]
     GenericWorker,
     ExternalWorker,

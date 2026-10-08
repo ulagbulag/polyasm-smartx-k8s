@@ -16,9 +16,8 @@ use url::Url;
 use yew::prelude::*;
 use yewdux::prelude::*;
 
-use crate::widgets::{Dialog, DialogAction};
-
 use super::client::{ApiStore, Client, Request, Response};
+use crate::widgets::{Dialog, DialogAction};
 
 #[derive(Clone, Debug)]
 pub struct Cached<T> {

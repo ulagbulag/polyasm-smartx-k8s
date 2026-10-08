@@ -246,7 +246,8 @@ pub fn component(props: &Props) -> Html {
     let io: self::io::UseIOReducerHandle = use_reducer_eq(Default::default);
     let selected_entry = use_state_eq(Default::default);
     let state = match file_entry.try_get_state() {
-        HttpStateRef::Pending => FileEntryState::Directory, // for building skeletons
+        HttpStateRef::Pending => FileEntryState::Directory, // for building
+        // skeletons
         HttpStateRef::Ready(entry) => {
             if entry.files.is_empty() {
                 FileEntryState::Empty

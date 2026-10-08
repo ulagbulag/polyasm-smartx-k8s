@@ -2,14 +2,13 @@ use std::{net::IpAddr, str::FromStr, sync::Arc, time::Duration};
 
 use anyhow::Result;
 use futures::{TryStreamExt, stream::FuturesUnordered};
-use hickory_net::runtime::TokioRuntimeProvider;
 use hickory_server::{
+    authority::ZoneType,
     proto::rr::{
         Name, RData, Record,
         rdata::{A, AAAA},
     },
-    store::in_memory::InMemoryZoneHandler,
-    zone_handler::{AxfrPolicy, ZoneType},
+    store::in_memory::InMemoryAuthority,
 };
 use kube::{
     Api, Client, ResourceExt,
@@ -99,14 +98,10 @@ async fn handle_apply(
                 .map_err(handle_error)?;
 
             let zone_type = ZoneType::Primary;
-            let allow_axfr = AxfrPolicy::Deny;
+            let allow_axfr = false;
             let nx_proof_kind = None;
-            let authority = InMemoryZoneHandler::<TokioRuntimeProvider>::empty(
-                origin.clone(),
-                zone_type,
-                allow_axfr,
-                nx_proof_kind,
-            );
+            let authority =
+                InMemoryAuthority::empty(origin.clone(), zone_type, allow_axfr, nx_proof_kind);
 
             let ttl = 300;
             let rdata = match addr {

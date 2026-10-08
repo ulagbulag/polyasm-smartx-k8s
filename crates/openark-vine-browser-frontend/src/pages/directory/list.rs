@@ -7,11 +7,10 @@ use yew::{
     function_component, html, use_reducer_eq, use_state_eq,
 };
 
-use crate::i18n::DynI18n;
-
 use super::upload::{
     UploadFile, UploadFileItem, UploadFileItemLayout, UploadFileItemPtr, UseUploadFileStateHandle,
 };
+use crate::i18n::DynI18n;
 
 #[derive(Clone, Debug, PartialEq)]
 enum CheckBoxAction {
