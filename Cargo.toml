@@ -172,12 +172,3 @@ yew-router = { version = "=0.20", default-features = false } # should be synced 
 yewdux = { version = "=0.13", default-features = false, features = [
     "future",
 ] } # should be synced with yew
-
-[patch.crates-io]
-# FIXME: Wait for a PR to be merged
-good_lp = { git = "https://github.com/ulagbulag/good_lp.git", branch = "feat/impl-clone-for-constraint-and-problem-variables" }
-# FIXME: Wakt for an Issue to be resolved
-kcr_argoproj_io = { git = "https://github.com/ulagbulag/kube-custom-resources-rs.git", branch = "chore/kube-4.2" }
-# io-uring = { path = "../io-uring" }
-# FIXME: Wait for a next version to be released
-timeago = { git = "https://github.com/vi/timeago.git", branch = "master" }

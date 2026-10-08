@@ -196,8 +196,6 @@ impl AnsibleClient {
                             "--inventory".into(),
                             "/root/ansible/defaults/all.yaml".into(),
                             "--inventory".into(),
-                            "/root/ansible/defaults.yaml".into(),
-                            "--inventory".into(),
                             "/root/ansible/config.yaml".into(),
                             "--inventory".into(),
                             "/root/ansible/hosts.yaml".into(),
